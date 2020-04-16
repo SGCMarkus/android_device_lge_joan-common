@@ -457,3 +457,6 @@ PRODUCT_PACKAGES += \
     libmediaextractorservice \
     libnl
     
+PRODUCT_BOOT_JARS +- \
+    WfdCommon
+    
