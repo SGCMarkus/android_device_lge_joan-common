@@ -457,3 +457,10 @@ PRODUCT_PACKAGES += \
     libmediaextractorservice \
     libnl
     
+PRODUCT_BOOT_JARS += \
+    WfdCommon
+    
+# Soong
+PRODUCT_BOARD_PLATFORM := msm8998
+PRODUCT_USES_QCOM_HARDWARE := true
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
