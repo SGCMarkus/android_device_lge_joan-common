@@ -35,3 +35,13 @@ allow init vndbinder_device:chr_file { ioctl open read write };
 allow init hal_drm_hwservice:hwservice_manager { add };
 
 allow init tee_device:chr_file { ioctl };
+
+allow init hci_attach_dev:chr_file { ioctl };
+allow init sysfs_wake_lock:file { write };
+allow init sysfs_wake_lock:file { open };
+allow init sysfs_usb_supply:file { open read };
+allow init init:socket { read write };
+allow init init:netlink_generic_socket { read write };
+allow init sensors_device:chr_file { ioctl };
+allow init init:capability2 { block_suspend };
+
