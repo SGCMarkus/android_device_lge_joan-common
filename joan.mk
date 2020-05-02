@@ -24,12 +24,13 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay \
-#    $(COMMON_PATH)/overlay-lineage
+    $(COMMON_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(COMMON_PATH)/overlay-lineage/lineage-sdk
 
 # Properties
--include $(COMMON_PATH)/vendor_prop.mk
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
@@ -107,7 +108,8 @@ PRODUCT_PACKAGES += \
 
 # DAC
 PRODUCT_PACKAGES += \
-    QuadDACPanel
+    QuadDACPanel \
+    lge.hardware.audio.dac.control@1.0-service
 
 # Dalvik/HWUI
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -253,6 +255,10 @@ PRODUCT_PACKAGES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.joan
+
+# Live Display
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service.joan
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -423,7 +429,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.2-service.joan
+    android.hardware.vibrator@1.2-service.lge
 
 # VR HAL
 PRODUCT_PACKAGES += \

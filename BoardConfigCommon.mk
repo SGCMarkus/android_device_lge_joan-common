@@ -16,6 +16,9 @@
 
 COMMON_PATH := device/lge/joan-common
 
+# inherit from common lge
+-include device/lge/common/BoardConfigCommon.mk
+
 # Platform
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -47,7 +50,7 @@ BOARD_USES_ALSA_AUDIO := true
 DTS_CODEC_M_ := false
 MM_AUDIO_ENABLED_FTM := true
 MM_AUDIO_ENABLED_SAFX := true
-# USE_CUSTOM_AUDIO_POLICY := 1
+USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
 AUDIO_FEATURE_ENABLED_COMPRESS_CAPTURE := false
