@@ -13,5 +13,9 @@
   {
     "repository": "android_packages_resources_devicesettings",
     "target_path": "packages/resources/devicesettings",
+  },
+  {
+    "repository": "android_device_lge_common",
+    "target_path": "device/lge/common"
   }
 ]
